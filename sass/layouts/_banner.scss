@@ -1,0 +1,61 @@
+.banner {
+  background-image: url("./../../images/product-header-bg.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  padding: 225px 0;
+  .banner__container {
+    display: flex;
+    align-items: center;
+    .banner__content {
+      .banner__title {
+        font-size: 7rem;
+        font-weight: 700;
+        color: $primary-main;
+        margin-bottom: 7px;
+      }
+      .banner__sub-title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: $primary-dark;
+        margin-bottom: 30px;
+      }
+      .banner__descriptions {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #656774;
+        margin-bottom: 25px;
+      }
+    }
+    .banner__image {
+      display: none;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      @include Responsive(MD) {
+        display: block;
+      }
+    }
+  }
+}
+
+.darkMode {
+  .banner {
+    background-image: url("./../../images/product-header-bg-dark.jpg");
+    .banner__container {
+      .banner__content {
+        .banner__title {
+          color: $darkMode-color;
+        }
+        .banner__sub-title {
+          color: $darkMode-color;
+        }
+        p {
+          color: white;
+        }
+      }
+    }
+  }
+}

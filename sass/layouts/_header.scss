@@ -1,0 +1,109 @@
+.header {
+  background-color: #f5f9fe;
+  box-shadow: 0 2px 4px #e2ebfc;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+
+  .navbar-brand {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: $primary-main;
+
+    &:hover {
+      color: $primary-main;
+    }
+  }
+
+  .navbar-toggler {
+    outline: none;
+    .navbar-toggler-icon {
+      background-image: none;
+      font-size: 2.4rem;
+      line-height: 1.5em;
+      color: #1d365e;
+    }
+  }
+
+  .navbar-collapse {
+    justify-content: flex-end;
+  }
+
+  .navbar-nav {
+    .nav-item {
+      padding: 20px;
+
+      .nav-link {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $primary-dark;
+        cursor: pointer;
+
+        &::after {
+          content: "";
+          width: 100%;
+          height: 2px;
+          display: block;
+          background-color: $primary-main;
+          transform: scale(0);
+          transition: all 0.2s;
+        }
+      }
+
+      &:hover {
+        .nav-link {
+          color: $primary-main;
+
+          &::after {
+            transform: scale(1);
+          }
+        }
+      }
+
+      &.active {
+        .nav-link {
+          color: $primary-main;
+
+          &::after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            display: block;
+            background-color: $primary-main;
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.darkMode {
+  .header {
+    background-color: #353536;
+    box-shadow: none;
+
+    .navbar-brand {
+      color: $darkMode-color;
+    }
+
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: #fff;
+        }
+
+        &.active {
+          .nav-link {
+            color: $darkMode-color;
+
+            &::after {
+              background-color: $darkMode-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
